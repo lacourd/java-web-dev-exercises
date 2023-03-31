@@ -1,4 +1,4 @@
-package exercises;
+package org.launchcode.java.exercises.ch3;
 
 import java.util.Arrays;
 
