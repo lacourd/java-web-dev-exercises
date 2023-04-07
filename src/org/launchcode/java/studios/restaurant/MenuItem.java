@@ -2,6 +2,7 @@ package org.launchcode.java.studios.restaurant;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
     private String name;
@@ -114,6 +115,21 @@ public class MenuItem {
 //    public void setDietaryRestrictions(ArrayList<String> dietaryRestrictions) {
 //        this.dietaryRestrictions = dietaryRestrictions;
 //    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return name.equals(menuItem.name) && description.equals(menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description);
+    }
+
     public void printItem() {
         if (this.isNew) {
             System.out.println(this.getName() + " *NEW ITEM* \n" + this.getCategory() +"\n" + this.getDescription() +"\n" + this.getPrice());

@@ -13,10 +13,13 @@ public class Restaurant {
         testMenu.addItem(eggs);
         testMenu.addItem(burger);
         testMenu.addItem(calamari);
+        MenuItem calamari2 = new MenuItem("Calamari", "Appetizer", "Fried calamari served with tartar sauce and ketchup", 21.99);
         testMenu.addItem(cheesecake);
         testMenu.printMenu();
         testMenu.removeItem(burger);
         System.out.println("Sold of out burgers!\n");
+        System.out.println(calamari2.equals(calamari));
+        testMenu.addItem(calamari2);
         testMenu.printMenu();
     }
 }

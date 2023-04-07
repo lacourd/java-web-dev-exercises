@@ -46,8 +46,14 @@ public class Menu {
     }
 
     public void addItem(MenuItem item) {
-        items.add(item);
-        setDateUpdated();
+        for (MenuItem menuItem : this.items) {
+            if (menuItem.equals(item)) {
+                System.out.println("Item already on menu; not added");
+                return;
+            }
+        }
+            items.add(item);
+            setDateUpdated();
     }
 
     public void removeItem(MenuItem item) {
